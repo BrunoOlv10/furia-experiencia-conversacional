@@ -1,0 +1,35 @@
+:root {
+    --black: #10101a;
+    --black-030: #272727;
+    --black-020: #333;
+    --black-010: #444;
+    --white: #fff;
+    --orange: #e67e22;
+    --orange-010: #f39c12;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--black-030);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    color: var(--white);
+    transition: 0.5s;
+}
+
+a:hover {
+    color: var(--orange-010);
+}

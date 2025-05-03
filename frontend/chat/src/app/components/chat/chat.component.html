@@ -1,0 +1,24 @@
+
+<header>
+    <img
+        src="assets/logo-furia.png"
+        alt="Logo da Furia"
+        width="130px"
+        height="130px"
+        loading="eager"
+    >
+</header>
+    
+<main>
+    <div class="chat-container">
+        <div class="chat-history">
+            <div *ngFor="let msg of chatHistory" class="chat-message">
+                <div [innerHTML]="msg" class="message"></div>
+            </div>
+        </div>
+        <div class="input-container">
+            <input [(ngModel)]="message" (keyup.enter)="sendMessage()" placeholder="Digite sua mensagem...">
+            <button (click)="sendMessage()">Enviar</button>
+        </div>
+    </div>
+</main>
