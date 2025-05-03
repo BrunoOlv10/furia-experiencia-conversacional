@@ -16,6 +16,8 @@ def format_response(response_text: str) -> str:
     
     url_pattern = re.compile(r'https?://\S+')
     response_text = re.sub(url_pattern, r'<a href="\g<0>" target="_blank">\g<0></a>', response_text)
+
+    response_text = re.sub(r"\*\*(.*?)\*\*", r"<strong>\1</strong>", response_text)
     
     return response_text
 
@@ -40,7 +42,7 @@ MENU_MESSAGE = emoji.emojize(
 )
 
 INITIAL_MESSAGE = emoji.emojize(
-    f":paw_prints: Fala, guerreiro(a)! Quer ficar por dentro de tudo da FURIA? \nDigite um número:\n{MENU_OPTIONS}"
+    f":paw_prints: Fala, guerreiro(a)! Quer ficar por dentro de tudo da FURIA? \n Digite um número:\n{MENU_OPTIONS}"
 )
 
 async def chat_handler(websocket: WebSocket):
@@ -61,12 +63,12 @@ async def chat_handler(websocket: WebSocket):
                 await websocket.send_text(format_response(MENU_MESSAGE))
 
             elif message == "2":
-                response = await ask_gemini("Quais são, em lista e brevemente, os times da FURIA Esports?")
+                response = await ask_gemini("Quais são, em lista, brevemente e pulando uma linha entre cada time, os times e seus integrantes da FURIA Esports?")
                 await websocket.send_text(format_response(emoji.emojize(f":handshake: Nossos times:\n{response}")))
                 await websocket.send_text(format_response(MENU_MESSAGE))
 
             elif message == "3":
-                response = await ask_gemini("Quais foram os últimos jogos da FURIA Esports? Me dê detalhes, em lista e brevemente, dele(s).")
+                response = await ask_gemini("Quais foram os últimos jogos da FURIA Esports (considerando todas as modalidades)? Me dê detalhes, em lista, brevemente e pulando apenas 1 linha entre cada jogo.")
                 await websocket.send_text(format_response(emoji.emojize(f":calendar: Últimos jogos:\n{response}")))
                 await websocket.send_text(format_response(MENU_MESSAGE))
 
@@ -75,12 +77,12 @@ async def chat_handler(websocket: WebSocket):
                 await websocket.send_text(format_response(MENU_MESSAGE))
 
             elif message == "5":
-                response = await ask_gemini("Quais são, em lista e brevemente, as últimas notícias sobre Esports da Fúria? Utilize como fonte o 'ge'.")
+                response = await ask_gemini("Quais são, em lista, brevemente e pulando uma linha entre cada notícia, as últimas notícias sobre Esports da Fúria? Utilize como fonte o 'ge'.")
                 await websocket.send_text(format_response(emoji.emojize(f":newspaper: Esports News:\n{response}")))
                 await websocket.send_text(format_response(MENU_MESSAGE))
 
             elif message == "6":
-                response = await ask_gemini("Quais são, em lista e brevemente, os criadores de conteúdo e streamers da FURIA Esports?")
+                response = await ask_gemini("Quais são, em lista, brevemente e pulando uma linha entre cada criador, os criadores de conteúdo e streamers da FURIA Esports?")
                 await websocket.send_text(format_response(emoji.emojize(f":video_game: Criadores de Conteúdo:\n{response}")))
                 await websocket.send_text(format_response(MENU_MESSAGE))
 

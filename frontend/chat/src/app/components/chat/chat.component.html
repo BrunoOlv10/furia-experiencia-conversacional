@@ -1,4 +1,3 @@
-
 <header>
     <img
         src="assets/logo-furia.png"
@@ -11,9 +10,17 @@
     
 <main>
     <div class="chat-container">
-        <div class="chat-history">
+        <div class="chat-history" #chatScrollHistory>
+            <div *ngIf="chatHistory.length === 0" class="chat-message">
+                <div class="message">🐾 Olá, guerreiro(a)! Seja bem-vindo ao chat de fãs da FURIA.</div>
+            </div>
+
             <div *ngFor="let msg of chatHistory" class="chat-message">
                 <div [innerHTML]="msg" class="message"></div>
+            </div>
+
+            <div *ngIf="isLoading" class="chat-message placeholder">
+                <div class="message">🤔 Pensando...</div>
             </div>
         </div>
         <div class="input-container">
