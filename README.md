@@ -8,13 +8,13 @@ Projeto de chat interativo para fãs da FURIA Esports, com interface em Angular,
 
 - Chat com inteligência artificial (Gemini AI)
 - Comunicação em tempo real via WebSocket
-- Interface com 6 opções de interação:
-  1- História da FURIA
-  2- Nossos Times
-  3- Últimos Jogos
-  4- Lojinha da Pantera
-  5- Esports News
-  6- Criadores de Conteúdo
+- Interface com 6 opções de interação: <br>
+    1- História da FURIA <br>
+    2- Nossos Times <br>
+    3- Últimos Jogos <br>
+    4- Lojinha da Pantera <br>
+    5- Esports News <br>
+    6- Criadores de Conteúdo
 - Respostas com texto formatado (negrito, emojis, links)
 
 ---
