@@ -58,7 +58,7 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
-### WebSocket (opcional) - Testar apenas ele
+### WebSocket (opcional) - Teste isolado da comunicação do chat
 
 ```bash
 1. Acesse a pasta backend:
