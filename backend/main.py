@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI
 from fastapi.websockets import WebSocket
 from chat import chat_handler
