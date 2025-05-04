@@ -102,6 +102,6 @@ O front-end Angular está hospedado no Vercel e se conecta ao back-end Python pu
 
 ## 🧪 Como Testar
 
-- Opção 1: acesse diretamente o link do front-end publicado no Vercel.
+- Opção 1: acesse diretamente o link do front-end publicado no Vercel, já conectado ao back-end.
 - Opção 2: rode o back-end localmente com uvicorn e o front-end com ng serve. Não se esqueça de instalar as dependências e a chave da API Gemini conforme explicado anteriormente.
 - Teste as opções do menu e veja as respostas da IA.
