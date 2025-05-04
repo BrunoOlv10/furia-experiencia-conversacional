@@ -1,5 +1,5 @@
 fastapi
 uvicorn[standard]
+google-generativeai
 python-dotenv
 emoji
-google-generativeai
