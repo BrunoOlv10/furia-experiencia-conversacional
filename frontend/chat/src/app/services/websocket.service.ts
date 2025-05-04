@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class WebSocketService {
   private messageSubject = new Subject<string>();
 
   public connect(): void {
-    this.socket = new WebSocket('ws://localhost:8000/chat');
+    this.socket = new WebSocket(environment.wsUrl);
 
     this.socket.onmessage = (event) => {
       this.messageSubject.next(event.data);
