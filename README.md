@@ -9,21 +9,23 @@ Projeto de chat interativo para fãs da FURIA Esports, com interface em Angular,
 - Chat com inteligência artificial (Gemini AI)
 - Comunicação em tempo real via WebSocket
 - Interface com 6 opções de interação:
-  1. História da FURIA
-  2. Nossos Times
-  3. Últimos Jogos
-  4. Lojinha da Pantera
-  5. Esports News
-  6. Criadores de Conteúdo
+  1- História da FURIA
+  2- Nossos Times
+  3- Últimos Jogos
+  4- Lojinha da Pantera
+  5- Esports News
+  6- Criadores de Conteúdo
 - Respostas com texto formatado (negrito, emojis, links)
 
 ---
 
 ## 📁 Estrutura do Projeto
 
+```
 /
 ├── backend/ # Python + Gemini
 └── frontend/chat/ # Interface Angular
+```
 
 ---
 
@@ -54,6 +56,7 @@ pip install -r requirements.txt
 
 4. Inicie o servidor:
 uvicorn main:app --reload
+```
 
 ### WebSocket (opcional) - Testar apenas ele
 
@@ -63,7 +66,7 @@ cd backend
 
 2. Rodar o endpoint:
 websocat ws://localhost:8000/ws
-
+```
 ---
 
 ## 🖥️ Front-end — Angular
@@ -85,6 +88,7 @@ npm install
 
 3. Rode a aplicação:
 ng serve
+```
 
 ---
 
@@ -92,12 +96,12 @@ ng serve
 
 👉 Acesse: https://furia-chat-experiencia-conversacional.vercel.app
 
-O front-end Angular está hospedado na Vercel e se conecta ao back-end Python publicado no Render.
+O front-end Angular está hospedado no Vercel e se conecta ao back-end Python publicado no Render.
 
 ---
 
 ## 🧪 Como Testar
 
 - Opção 1: acesse diretamente o link do front-end publicado no Vercel.
-- Opção 2: rode o back-end local com uvicorn e o front-end com ng serve.
-- Teste as opções do menu e veja as respostas da IA em tempo real.
+- Opção 2: rode o back-end localmente com uvicorn e o front-end com ng serve. Não se esqueça de instalar as dependências e a chave da API Gemini conforme explicado anteriormente.
+- Teste as opções do menu e veja as respostas da IA.
