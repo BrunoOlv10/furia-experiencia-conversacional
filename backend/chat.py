@@ -87,7 +87,7 @@ async def chat_handler(websocket: WebSocket):
                 await websocket.send_text(format_response(MENU_MESSAGE))
 
             else:
-                await websocket.send_text(emoji.emojize(":robot: Não entendi, guerreiro(a)... Tente digitar algumas das opções disponíveis (1-6)."))
+                await websocket.send_text(emoji.emojize(":robot: Não entendi, guerreiro(a)... Tente digitar alguma das opções disponíveis (1-6)."))
                 await websocket.send_text(format_response(MENU_MESSAGE))
 
     except WebSocketDisconnect:
